@@ -11,6 +11,7 @@ set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
 
 # Add GLFW as a subproject
 add_subdirectory(vendor/glfw)
+add_subdirectory(vendor/glad)
 
 set(SOURCES
     src/main.cpp
@@ -19,7 +20,7 @@ set(SOURCES
 add_executable(graphics-engine ${SOURCES})
 
 # Link against GLFW
-target_link_libraries(graphics-engine glfw)
+target_link_libraries(graphics-engine glfw glad)
 
 target_include_directories(graphics-engine
     PRIVATE
